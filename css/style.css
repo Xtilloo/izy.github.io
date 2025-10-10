@@ -69,6 +69,27 @@ header .current a {
     font-weight: bold;
 }
 
+article .socials h2 {
+    font-style: italic;
+}
+
+#socials ul {
+    color: #e8491d;
+    font-weight: bold;
+}
+
+#socials-subtext p {
+    font-weight: bold;
+}
+
+#socials-heading-steps span {
+    color: #e8491d;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 26px;
+}
+
+
 header a:hover {
     color: #cccccc;
     font-weight: bold;
@@ -145,6 +166,84 @@ header a:hover {
     width: 90px;
 }
 
+.socials li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.socials div{
+    aspect-ratio: 1/1;
+    height: 5%;
+    width: 5%;
+    margin-right: 5%;
+    padding: 5px;
+}
+
+.socials div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.socials #facebook {
+    font-weight: 500;
+    text-decoration: none;
+    color:blue;
+}
+
+.button-link {
+    display: inline-block; /* Allows padding and other box model properties */
+    background-color: #007BFF;
+    color: #ffffff; /* White text */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    
+}
+
+.button-link:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Give it a little "lift" effect */
+    color: #ffffff; /* Ensure text color doesn't change from a:hover rule */
+    
+}
+
+.highlight-link {
+    position: relative; /* Needed for the pseudo-element positioning */
+    color: #333;
+    text-decoration: none;
+    transition: color 0.4s ease;
+    z-index: 1;
+    font-size: 20px;
+
+    
+}
+
+.highlight-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 10%; /* Controls the thickness of the highlight */
+    width: 100%;
+    background-color: #ffdd57; /* A nice yellow highlight color */
+    transform-origin: left;
+    transform: scaleX(0); /* Start with the highlight scaled to 0 */
+    transition: transform 0.4s ease;
+    z-index: -1; /* Place the highlight behind the text */
+}
+
+.highlight-link:hover {
+    color: #000; /* Darken text on hover for contrast */
+}
+
+.highlight-link:hover::after {
+    transform: scaleX(1); /* Scale the highlight to 100% on hover */
+}
+
+
 aside#sidebar{
     float: right;
     width: 30%;
@@ -155,6 +254,11 @@ article#main-col {
     float: left;
     width: 65%;
     margin-top: 10px;
+}
+
+article#main-col h2 {
+    font-weight: bold;
+    font-style: italic;
 }
 
 .dark {
