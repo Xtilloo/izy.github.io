@@ -39,34 +39,98 @@
         <section id="newsletter">
             <div class="container">
                 <h1>Newsletter - Join the Fan club </h1>
-                <form>
-                    <input type="email" placeholder="Enter email...">
-                    <button type="submit" class="button_1">Subsribe</button>
+                <form id="newsletter-form" action="https://formspree.io/f/mvgbnyeq" method="POST">
+                    <input id="user-email" type="email" name="email" placeholder="Enter email...">
+                    <button id="user-email-button" type="submit" class="button_1">Subsribe</button>
                 </form>
             </div>
         </section>
-        <section id="boxes">
+        <br>
+        <section class="image-showcase">
+
+            <div class="image-frame" id="home">
+                <h2>Stay Updated</h2>
+                <img src="img/showcase1.PNG" alt="Izy getting ready to launch for a race on her snowboard">
+                <a>Catch up with bi-monthly updates and lessons from Izy's training and travels</a>
+            </div>
+
+            <div class="image-frame" id="home">
+                <h2>Learn More</h2>
+                <img src="img/showcase3.jpg" alt="Izy standing on a victory podium">
+                <a>Learn more about adaptive sports</a>
+            </div>
+
+            <div class="image-frame" id="home">
+                <div><h2>Speaking</h2></div>
+                <img src="img/showcase2.jpg" alt="Izy holding a trophy">
+                <a>Learn about Izy's speaking events</a>
+            </div>
+
+        </section>
+        <section>
             <div class="container">
-                <div class="box">
-                    <img src="./img/download.png">
-                    <h3>HTML5 Markup</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras congue sapien eu libero volutpat, et euismod magna egestas.</p>
-                </div>
-                <div class="box">
-                    <img src="./img/css3.png">
-                    <h3>CSS3 Styling</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras congue sapien eu libero volutpat, et euismod magna egestas.</p>
-                </div>
-                <div class="box">
-                    <img src="./img/webdesign.png">
-                    <h3>Graphic Design</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras congue sapien eu libero volutpat, et euismod magna egestas.</p>
+                <div class="socials">
+                    <h4>Follow for Sporting News</h4>
+                    <ul>
+                        <li>
+                            <div><img src="./img/Instagram_icon.png"> </div>
+                            <a class="button-link" href="https://www.instagram.com/culxtured/">@culxtured</a>
+                            
+                        </li>
+                    </ul>
+                    
+                    <ul>
+                        <li>
+                            <div><img src="./img/Instagram_icon.png"> </div>
+                            <a class="button-link" href="https://www.instagram.com/paralympics/">@paralympics</a>
+                            
+                        </li>
+                    </ul>
+
                 </div>
             </div>
         </section>
-        <footer>
-            <p>Acme Web Design Copyright &copy; 2025</p>
+        <footer class="main-footer">
+            <div class="footer-container">
+
+                <div class="footer-socials">
+                    <h3>Connect with Izy</h3>
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/izyhicks" target="_blank" aria-label="Facebook Profile">
+                                <img src="./img/Facebook_Logo_2023.png" alt="Facebook">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/isabelle-hicks-41bab61ab/" target="_blank" aria-label="LinkedIn Profile">
+                                <img src="./img/linkedIn.png" alt="LinkedIn">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/izybelle249/" target="_blank" aria-label="Instagram Profile">
+                                <img src="./img/Instagram_icon.png" alt="Instagram">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-info">
+                    <h3>About Izy</h3>
+                    <p>Izy is a dedicated athlete and inspiring individual. Follow her journey and support her goals!</p>
+                    <p>&copy; <span id="currentYear"></span> Izy. All rights reserved.</p>
+                    <p>Website designed by Xtilloo - <a href="https://github.com/Xtilloo" target="_blank">GitHub</a></p>
+                </div>
+
+                <div class="footer-contact">
+                    <h3>Get in Touch</h3>
+                    <p>For inquiries, please use the <a href="connect.html">contact form</a> on the 'Connect' page.</p>
+                </div>
+            </div>
         </footer>
+
+        <script>
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        </script>
     </body>
 
 </html>

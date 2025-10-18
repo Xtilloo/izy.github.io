@@ -6,12 +6,18 @@ body{
     padding: 0;
     margin: 0;
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 
 }
 /* class = .[class-name] */
 /* id = #[id-name] */
 .container{
-    width:80%;
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    width:90%;
     margin:auto;
     overflow:hidden;
 }
@@ -21,7 +27,7 @@ header{
     color: #ffffff;
     padding-top: 30px;
     min-height:70px;
-    border-bottom:#e8491d;
+    border-bottom:#007bff;
 }
 
 header a{
@@ -43,6 +49,7 @@ header li{
 }
 
 header #branding{
+    font-size: 30px;
     float: left;
 }
 
@@ -61,11 +68,11 @@ ul {
 }
 
 header .highlight {
-    color: #e8491d;
+    color: #007bff;
     font-weight: bold;
 }
 header .current a {
-    color: #e8491d;
+    color: #007bff;
     font-weight: bold;
 }
 
@@ -74,7 +81,7 @@ article .socials h2 {
 }
 
 #socials ul {
-    color: #e8491d;
+    color: #007bff;
     font-weight: bold;
 }
 
@@ -83,10 +90,16 @@ article .socials h2 {
 }
 
 #socials-heading-steps span {
-    color: #e8491d;
+    color: #007bff;
     font-weight: bold;
     font-style: normal;
     font-size: 26px;
+}
+
+#image-in-div {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 
@@ -97,21 +110,25 @@ header a:hover {
 
 #showcase {
     min-height: 400px;
-    background:url('../img/showcase.jpeg');
+    background:url('../img/front-page.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
     text-align: center;
+    height: 65vh;
 }
 
 #showcase h1 {
-    margin-top: 100px;
+    margin-top: 25px;
     font-size: 55px;
     margin-bottom: 10px;
+
 }
 
 #showcase p{
     font-size: 20px;
+
 }
 
 #showcase .text{
@@ -120,6 +137,8 @@ header a:hover {
     background-repeat: no-repeat;
     background-blend-mode: lighten;
     color: #FFFFFF;
+    width: 100%;
+
 }
 
 #newsletter {
@@ -145,7 +164,7 @@ header a:hover {
 
 .button_1 {
     height: 38px;
-    background-color: #e8491d;
+    background-color: #007bff;
     padding-left: 20px;
     padding-right: 20px;
     color: #FFFFFF;
@@ -169,12 +188,13 @@ header a:hover {
 .socials li {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-bottom: 10px;
 }
 .socials div{
     aspect-ratio: 1/1;
-    height: 5%;
-    width: 5%;
+    height: 90px;
+    width: auto;
     margin-right: 5%;
     padding: 5px;
 }
@@ -185,22 +205,18 @@ header a:hover {
     object-fit: cover;
 }
 
-.socials #facebook {
-    font-weight: 500;
-    text-decoration: none;
-    color:blue;
-}
 
 .button-link {
     display: inline-block; /* Allows padding and other box model properties */
     background-color: #007BFF;
     color: #ffffff; /* White text */
-    padding: 10px 20px;
+    padding: 20px 20px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    
+    width: 150px;
+    text-align: center;
 }
 
 .button-link:hover {
@@ -210,50 +226,53 @@ header a:hover {
     
 }
 
-.highlight-link {
-    position: relative; /* Needed for the pseudo-element positioning */
-    color: #333;
-    text-decoration: none;
-    transition: color 0.4s ease;
-    z-index: 1;
-    font-size: 20px;
-
-    
+#main {
+    flex-grow: 1;
 }
-
-.highlight-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 10%; /* Controls the thickness of the highlight */
-    width: 100%;
-    background-color: #ffdd57; /* A nice yellow highlight color */
-    transform-origin: left;
-    transform: scaleX(0); /* Start with the highlight scaled to 0 */
-    transition: transform 0.4s ease;
-    z-index: -1; /* Place the highlight behind the text */
-}
-
-.highlight-link:hover {
-    color: #000; /* Darken text on hover for contrast */
-}
-
-.highlight-link:hover::after {
-    transform: scaleX(1); /* Scale the highlight to 100% on hover */
-}
-
 
 aside#sidebar{
-    float: right;
-    width: 30%;
-    margin-top: 10px;
+    margin-top: 30px;
+    flex-shrink: 0;
+    width: 320px;
+    max-height: 80vh;;
+    margin-left: 30px;
+}
+
+.sidebar-images {
+    margin-top: 20px; /* Adds space between the form and the images */
+}
+
+.sidebar-text {
+    text-align: center;
+}
+.sidebar-frame {
+    display: flex;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-images img {
+    width: 100%;  /* This makes the image fill the sidebar's 30% width */
+    height: auto; /* Keeps the image's aspect ratio */
+    padding: 10px; /* Space between the image and the border */
+    border-radius: 5px;
+    border: 1px solid #ddd; /* A subtle outer border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a nice drop shadow for depth */
+    box-sizing: border-box; /* Ensures padding and border are included in the 30% width */
+    background-color: #35424a;
+}
+
+/* Adds a little space between the two images */
+.sidebar-images img:first-child {
+    margin-bottom: 15px;
 }
 
 article#main-col {
-    float: left;
+    flex: 1;
     width: 65%;
     margin-top: 10px;
+    font-size: large;
 }
 
 article#main-col h2 {
@@ -261,19 +280,37 @@ article#main-col h2 {
     font-style: italic;
 }
 
+article#about-article {
+    text-align: center;
+    width: 100%;
+    font-size: x-large;
+
+}
+
 .dark {
-    padding: 15px;
     background-color: #35424a;
     color: #FFFFFF;
     margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+
 }
 
-ul#services li{
+ul#services {
+    text-align: center;
+}
+ul#services > li{
     list-style: none;    
     padding: 20px;
-    border: #cccccc;
+    border: 1px solid #cccccc;
     margin-bottom: 5px;
     background-color: #e6e6e6;
+    
+
+}
+ul#services img {
+    height: px;
+    width: auto;
 }
 
 aside#sidebar .quote input, aside#sidebar .quote textarea{
@@ -282,10 +319,9 @@ aside#sidebar .quote input, aside#sidebar .quote textarea{
 }
 
 footer {
-    padding:20px;
     margin-top: 20px;
     color: #ffffff;
-    background-color: #e8491d;
+    background-color: #007bff;
     text-align: center;
 }
 
@@ -296,12 +332,15 @@ footer {
     header nav li,
     #newsletter h1,
     #newsletter form,
+    footer,
     #boxes .box,
     article#main-col,
     aside#sidebar{
         float:none;
         text-align: center;
         width: 100%;
+        margin: 0;
+        flex-shrink: 1;
 
     }
     header {
@@ -319,5 +358,198 @@ footer {
     #newsletter form input[type="email"]{
         width: 100%;
         margin-bottom: 5px;
+    }
+
+    .socials li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+    .socials div{
+        aspect-ratio: 1/1;
+        height: 90px;
+        width: auto;
+        justify-content: center;
+
+    }
+
+    
+
+    .socials div img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .image-showcase {
+        flex-direction: column; /* Stacks the images vertically */
+        align-items: center;   /* Centers the stacked images */
+    }
+
+    .image-frame {
+        padding: 0;
+        margin: 0;
+        margin-bottom: 25px; 
+    }
+
+    .container {
+        flex-direction: column;
+    }
+   
+    aside#sidebar iframe {
+        max-width: 100%;
+        box-sizing: border-box; /* Includes padding/border in the width */
+    }
+}
+
+/* Main container for the three images */
+.image-showcase {
+    display: flex; /* Aligns the image frames in a row */
+    justify-content: space-around; /* Distributes space evenly around the items */
+    background-color: #f4f4f4; /* Optional: A light background for the section */
+    width: 100%;
+}
+
+
+/* This is the "frame" around each image */
+.image-frame {
+    /* Each frame takes up 30% of the container's width */
+    flex-basis: 30%; 
+    
+    /* Styling to create the frame effect */
+    background-color: #ffffff; /* The white matting part of the frame */
+    padding: 10px; /* Space between the image and the border */
+    border: 1px solid #ddd; /* A subtle outer border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a nice drop shadow for depth */
+    box-sizing: border-box; /* Ensures padding and border are included in the 30% width */
+}
+
+/* This is the "frame" around each image */
+.image-frame#home {
+    /* Each frame takes up 30% of the container's width */
+    flex-basis: 20%; 
+    
+    /* Styling to create the frame effect */
+    background-color: #ffffff; /* The white matting part of the frame */
+    padding: 10px; /* Space between the image and the border */
+    border: 1px solid #ddd; /* A subtle outer border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a nice drop shadow for depth */
+    box-sizing: border-box; /* Ensures padding and border are included in the 30% width */
+}
+
+/* The actual image inside the frame */
+.image-frame img {
+    width: 100%; /* Makes the image fill the frame's width */
+    height: auto; /* Maintains the image's aspect ratio */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-frame h2 {
+    text-align: center;
+    font-weight: bold;
+    font-style: oblique;
+    display: inline-block; /* Allows padding and other box model properties */
+    background-color: #536a79;
+    color: #ffffff; /* White text */
+    border-radius: 5px;
+    border: 1px solid #ddd; /* A subtle outer border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a nice drop shadow for depth */
+    
+    width: 100%;
+}
+
+.image-frame a {
+    font-size: large;
+}
+
+/* --- Footer Styles --- */
+.main-footer {
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    padding: 40px 0; /* Vertical padding */
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex; /* Use flexbox for column layout */
+    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+    justify-content: space-around; /* Distribute columns evenly */
+    max-width: 1200px; /* Max width of the footer content */
+    margin: 0 auto; /* Center the footer content */
+    padding: 0 20px; /* Horizontal padding for smaller screens */
+}
+
+.footer-socials,
+.footer-info,
+.footer-contact {
+    flex: 1; /* Allows sections to grow and shrink */
+    min-width: 280px; /* Minimum width before wrapping to new line */
+    margin-bottom: 30px; /* Space between sections on wrap */
+    padding: 0 15px; /* Inner padding for columns */
+}
+
+.main-footer h3 {
+    color: #007bff; /* A prominent color for headings (your blue) */
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.main-footer p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.main-footer a {
+    color: #007bff; /* Link color */
+    text-decoration: none;
+}
+
+.main-footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- Social Icons --- */
+.footer-socials ul {
+    list-style: none; /* Remove bullets */
+    padding: 0;
+    display: flex; /* Layout icons in a row */
+    gap: 15px; /* Space between icons */
+    justify-content: center;
+}
+
+.footer-socials li {
+    display: inline-block; /* Ensure list items are inline */
+}
+
+.footer-socials img {
+    width: 40px; /* Size of social icons */
+    height: 40px;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.footer-socials img:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack columns vertically on mobile */
+        text-align: center; /* Center text on mobile */
+    }
+
+    .footer-socials ul {
+        justify-content: center; /* Center social icons on mobile */
+    }
+
+    .footer-socials,
+    .footer-info,
+    .footer-contact {
+        padding: 0 10px; /* Reduce padding on mobile */
+        min-width: unset; /* Allow full width on mobile */
     }
 }
