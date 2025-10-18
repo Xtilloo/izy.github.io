@@ -226,6 +226,12 @@ header a:hover {
     
 }
 
+#newsletter-status {
+    display: none; /* Hide it until we need it */
+    font-size: 1.2em; /* Make it a bit bigger */
+    font-weight: bold;
+}
+
 #main {
     flex-grow: 1;
 }
@@ -234,7 +240,6 @@ aside#sidebar{
     margin-top: 30px;
     flex-shrink: 0;
     width: 320px;
-    max-height: 80vh;;
     margin-left: 30px;
 }
 
