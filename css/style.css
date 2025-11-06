@@ -1,65 +1,17 @@
-body{
+/* =================================
+   1. General Styles
+   ================================= */
+body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     line-height: 1.5;
-    font: 15px/1.5 Arial, Helvetica, sans-serif;
+    /* font: 15px/1.5 Arial, Helvetica, sans-serif; */ /* Redundant with properties above */
     padding: 0;
     margin: 0;
     background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-
-}
-/* class = .[class-name] */
-/* id = #[id-name] */
-.container{
-    display: flex;
-    justify-content: space-between;
-    flex-grow: 1;
-    width:90%;
-    margin:auto;
-    overflow:hidden;
-}
-
-header{
-    background-color: #35424a;
-    color: #ffffff;
-    padding-top: 30px;
-    min-height:70px;
-    border-bottom:#007bff;
-}
-
-header a{
-    color:#ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-}
-
-header ul{
-    margin:0;
-    padding:0;
-}
-
-header li{
-    float:left;
-    display: inline;
-    padding: 0 20px 0 20px;
-}
-
-header #branding{
-    font-size: 30px;
-    float: left;
-}
-
-header #branding h1{
-    margin:0;
-}
-
-header nav {
-    float:right;
-    margin-top: 10px;
 }
 
 ul {
@@ -67,50 +19,86 @@ ul {
     padding: 0;
 }
 
-header .highlight {
-    color: #007bff;
-    font-weight: bold;
-}
-header .current a {
-    color: #007bff;
-    font-weight: bold;
-}
-
-article .socials h2 {
-    font-style: italic;
-}
-
-#socials ul {
-    color: #007bff;
-    font-weight: bold;
+/* =================================
+   2. Layout
+   ================================= */
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
 }
 
-#socials-subtext p {
-    font-weight: bold;
+#main {
+    flex-grow: 1;
 }
 
-#socials-heading-steps span {
-    color: #007bff;
-    font-weight: bold;
-    font-style: normal;
-    font-size: 26px;
+/* =================================
+   3. Header
+   ================================= */
+header {
+    background-color: #35424a;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #007bff;
 }
 
-#image-in-div {
-    max-width: 100%;
-    height: auto;
-    display: block;
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
 }
-
 
 header a:hover {
     color: #cccccc;
     font-weight: bold;
 }
 
+header ul {
+    margin: 0;
+    padding: 0;
+}
+
+header li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header #branding {
+    font-size: 30px;
+    float: left;
+}
+
+header #branding h1 {
+    margin: 0;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header .highlight {
+    color: #007bff;
+    font-weight: bold;
+}
+
+header .current a {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* =================================
+   4. Showcase (Hero)
+   ================================= */
 #showcase {
     min-height: 400px;
-    background:url('../img/front-page.jpg');
+    background: url('../img/front-page.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -123,32 +111,32 @@ header a:hover {
     margin-top: 25px;
     font-size: 55px;
     margin-bottom: 10px;
-
 }
 
-#showcase p{
+#showcase p {
     font-size: 20px;
-
 }
 
-#showcase .text{
+#showcase .text {
     background-color: rgba(75, 75, 75, .8);
     background-position: center;
     background-repeat: no-repeat;
     background-blend-mode: lighten;
     color: #FFFFFF;
     width: 100%;
-
 }
 
+/* =================================
+   5. Newsletter
+   ================================= */
 #newsletter {
     padding: 15px;
     color: white;
     background: #35424a
 }
 
-#newsletter h1{
-    float:left;
+#newsletter h1 {
+    float: left;
 }
 
 #newsletter form {
@@ -162,14 +150,15 @@ header a:hover {
     width: 250px;
 }
 
-.button_1 {
-    height: 38px;
-    background-color: #007bff;
-    padding-left: 20px;
-    padding-right: 20px;
-    color: #FFFFFF;
+#newsletter-status {
+    display: none; /* Hide it until we need it */
+    font-size: 1.2em; /* Make it a bit bigger */
+    font-weight: bold;
 }
 
+/* =================================
+   6. Boxes
+   ================================= */
 #boxes {
     margin-top: 20px;
 }
@@ -181,98 +170,13 @@ header a:hover {
     text-align: center;
 }
 
-#boxes .box img { 
+#boxes .box img {
     width: 90px;
 }
 
-.socials li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-.socials div{
-    aspect-ratio: 1/1;
-    height: 90px;
-    width: auto;
-    margin-right: 5%;
-    padding: 5px;
-}
-
-.socials div img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-.button-link {
-    display: inline-block; /* Allows padding and other box model properties */
-    background-color: #007BFF;
-    color: #ffffff; /* White text */
-    padding: 20px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 150px;
-    text-align: center;
-}
-
-.button-link:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px); /* Give it a little "lift" effect */
-    color: #ffffff; /* Ensure text color doesn't change from a:hover rule */
-    
-}
-
-#newsletter-status {
-    display: none; /* Hide it until we need it */
-    font-size: 1.2em; /* Make it a bit bigger */
-    font-weight: bold;
-}
-
-#main {
-    flex-grow: 1;
-}
-
-aside#sidebar{
-    margin-top: 30px;
-    flex-shrink: 0;
-    width: 320px;
-    margin-left: 30px;
-}
-
-.sidebar-images {
-    margin-top: 20px; /* Adds space between the form and the images */
-}
-
-.sidebar-text {
-    text-align: center;
-}
-.sidebar-frame {
-    display: flex;
-    padding: 0;
-    align-items: center;
-    justify-content: center;
-}
-
-.sidebar-images img {
-    width: 100%;  /* This makes the image fill the sidebar's 30% width */
-    height: auto; /* Keeps the image's aspect ratio */
-    padding: 10px; /* Space between the image and the border */
-    border-radius: 5px;
-    border: 1px solid #ddd; /* A subtle outer border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a nice drop shadow for depth */
-    box-sizing: border-box; /* Ensures padding and border are included in the 30% width */
-    background-color: #35424a;
-}
-
-/* Adds a little space between the two images */
-.sidebar-images img:first-child {
-    margin-bottom: 15px;
-}
-
+/* =================================
+   7. Main Content & Sidebar
+   ================================= */
 article#main-col {
     flex: 1;
     width: 65%;
@@ -289,126 +193,55 @@ article#about-article {
     text-align: center;
     width: 100%;
     font-size: x-large;
-
 }
 
-.dark {
-    background-color: #35424a;
-    color: #FFFFFF;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-
+aside#sidebar {
+    margin-top: 30px;
+    flex-shrink: 0;
+    width: 320px;
+    margin-left: 30px;
 }
 
-ul#services {
-    text-align: center;
-}
-ul#services > li{
-    list-style: none;    
-    padding: 20px;
-    border: 1px solid #cccccc;
-    margin-bottom: 5px;
-    background-color: #e6e6e6;
-    
-
-}
-ul#services img {
-    height: px;
-    width: auto;
-}
-
-aside#sidebar .quote input, aside#sidebar .quote textarea{
+aside#sidebar .quote input,
+aside#sidebar .quote textarea {
     width: 90%;
     padding: 5px;
 }
 
-footer {
-    margin-top: 20px;
-    color: #ffffff;
-    background-color: #007bff;
+.sidebar-text {
     text-align: center;
 }
 
-/* media queries */
-@media(max-width: 768px) {
-    header #branding,
-    header nav,
-    header nav li,
-    #newsletter h1,
-    #newsletter form,
-    footer,
-    #boxes .box,
-    article#main-col,
-    aside#sidebar{
-        float:none;
-        text-align: center;
-        width: 100%;
-        margin: 0;
-        flex-shrink: 1;
-
-    }
-    header {
-        padding-bottom: 20px;
-    }
-    #showcase h1{
-        margin-top: 40px;
-    }
-
-    #newsletter button, .quote button {
-        display:block;
-        width: 100%;
-    }
-
-    #newsletter form input[type="email"]{
-        width: 100%;
-        margin-bottom: 5px;
-    }
-
-    .socials li {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-        justify-content: center;
-    }
-    .socials div{
-        aspect-ratio: 1/1;
-        height: 90px;
-        width: auto;
-        justify-content: center;
-
-    }
-
-    
-
-    .socials div img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .image-showcase {
-        flex-direction: column; /* Stacks the images vertically */
-        align-items: center;   /* Centers the stacked images */
-    }
-
-    .image-frame {
-        padding: 0;
-        margin: 0;
-        margin-bottom: 25px; 
-    }
-
-    .container {
-        flex-direction: column;
-    }
-   
-    aside#sidebar iframe {
-        max-width: 100%;
-        box-sizing: border-box; /* Includes padding/border in the width */
-    }
+.sidebar-frame {
+    display: flex;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Main container for the three images */
+.sidebar-images {
+    margin-top: 20px; /* Adds space between the form and the images */
+}
+
+.sidebar-images img {
+    width: 100%; /* This makes the image fill the sidebar's 30% width */
+    height: auto; /* Keeps the image's aspect ratio */
+    padding: 10px; /* Space between the image and the border */
+    border-radius: 5px;
+    border: 1px solid #ddd; /* A subtle outer border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a nice drop shadow for depth */
+    box-sizing: border-box; /* Ensures padding and border are included in the 30% width */
+    background-color: #35424a;
+}
+
+/* Adds a little space between the two images */
+.sidebar-images img:first-child {
+    margin-bottom: 15px;
+}
+
+/* =================================
+   8. Image Showcase
+   ================================= */
 .image-showcase {
     display: flex; /* Aligns the image frames in a row */
     justify-content: space-around; /* Distributes space evenly around the items */
@@ -416,12 +249,10 @@ footer {
     width: 100%;
 }
 
-
 /* This is the "frame" around each image */
 .image-frame {
     /* Each frame takes up 30% of the container's width */
-    flex-basis: 30%; 
-    
+    flex-basis: 30%;
     /* Styling to create the frame effect */
     background-color: #ffffff; /* The white matting part of the frame */
     padding: 10px; /* Space between the image and the border */
@@ -433,8 +264,7 @@ footer {
 /* This is the "frame" around each image */
 .image-frame#home {
     /* Each frame takes up 30% of the container's width */
-    flex-basis: 20%; 
-    
+    flex-basis: 20%;
     /* Styling to create the frame effect */
     background-color: #ffffff; /* The white matting part of the frame */
     padding: 10px; /* Space between the image and the border */
@@ -462,7 +292,6 @@ footer {
     border-radius: 5px;
     border: 1px solid #ddd; /* A subtle outer border */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a nice drop shadow for depth */
-    
     width: 100%;
 }
 
@@ -470,12 +299,85 @@ footer {
     font-size: large;
 }
 
-/* --- Footer Styles --- */
+/* =================================
+   9. Article Content (Socials, Services)
+   ================================= */
+article .socials h2 {
+    font-style: italic;
+}
+
+.socials li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.socials div {
+    aspect-ratio: 1/1;
+    height: 90px;
+    width: auto;
+    margin-right: 5%;
+    padding: 5px;
+}
+
+.socials div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#socials ul {
+    color: #007bff;
+    font-weight: bold;
+}
+
+#socials-subtext p {
+    font-weight: bold;
+}
+
+#socials-heading-steps span {
+    color: #007bff;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 26px;
+}
+
+ul#services {
+    text-align: center;
+}
+
+ul#services > li {
+    list-style: none;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    margin-bottom: 5px;
+    background-color: #e6e6e6;
+}
+
+ul#services img {
+    height: px; /* Error in original: "height: px;" - should have a value */
+    width: auto;
+}
+
+/* =================================
+   10. Footer
+   ================================= */
+/* Simple original footer */
+footer {
+    margin-top: 20px;
+    color: #ffffff;
+    background-color: #007bff;
+    text-align: center;
+}
+
+/* --- Main Footer Styles --- */
 .main-footer {
     background-color: #333; /* Dark background */
     color: #fff; /* White text */
     padding: 40px 0; /* Vertical padding */
     font-family: Arial, sans-serif;
+    margin-top: 20px; /* Added margin-top to match simple footer */
 }
 
 .footer-container {
@@ -540,8 +442,130 @@ footer {
     transform: translateY(-5px); /* Lift effect on hover */
 }
 
-/* --- Responsive Adjustments --- */
-@media (max-width: 768px) {
+/* =================================
+   11. Utility & Misc
+   ================================= */
+#image-in-div {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.button_1 {
+    height: 38px;
+    background-color: #007bff;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #FFFFFF;
+}
+
+.button-link {
+    display: inline-block; /* Allows padding and other box model properties */
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 20px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 150px;
+    text-align: center;
+}
+
+.button-link:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+.dark {
+    background-color: #35424a;
+    color: #FFFFFF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* =================================
+   12. Media Queries (Responsive)
+   ================================= */
+@media(max-width: 768px) {
+    header #branding,
+    header nav,
+    header nav li,
+    #newsletter h1,
+    #newsletter form,
+    footer,
+    #boxes .box,
+    article#main-col,
+    aside#sidebar {
+        float: none;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        flex-shrink: 1;
+    }
+
+    header {
+        padding-bottom: 20px;
+    }
+
+    #showcase h1 {
+        margin-top: 40px;
+    }
+
+    #newsletter button,
+    .quote button {
+        display: block;
+        width: 100%;
+    }
+
+    #newsletter form input[type="email"] {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .socials li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+
+    .socials div {
+        aspect-ratio: 1/1;
+        height: 90px;
+        width: auto;
+        justify-content: center;
+    }
+
+    .socials div img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .image-showcase {
+        flex-direction: column; /* Stacks the images vertically */
+        align-items: center; /* Centers the stacked images */
+    }
+
+    .image-frame {
+        padding: 0;
+        margin: 0;
+        margin-bottom: 25px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    aside#sidebar iframe {
+        max-width: 100%;
+        box-sizing: border-box; /* Includes padding/border in the width */
+    }
+
+    /* --- Responsive Footer --- */
     .footer-container {
         flex-direction: column; /* Stack columns vertically on mobile */
         text-align: center; /* Center text on mobile */
